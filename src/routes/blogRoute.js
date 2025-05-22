@@ -1,11 +1,20 @@
 "use strict";
 const router = require("express").Router()
-const BlogController = require('../controllers/blogController')
+const {BlogCategory,BlogPost} = require('../controllers/blogController')
+//! ******************
+router.route('/category')
+    .get(BlogCategory.list)
+    .post(BlogCategory.create)
+router.route('/category/:categoryId')
+    .get(BlogCategory.read)
+    .put(BlogCategory.update)
+    .delete(BlogCategory.delete)
+//! ******************
 router.route('/post')
-    .get(BlogController.list)
-    .post(BlogController.create)
+    .get(BlogPost.list)
+    .post(BlogPost.create)
 router.route('/post/:postId')
-    .get(BlogController.read)
-    .put(BlogController.update)
-    .delete(BlogController.delete)
+    .get(BlogPost.read)
+    .put(BlogPost.update)
+    .delete(BlogPost.delete)
 module.exports = router
