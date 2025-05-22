@@ -20,11 +20,11 @@ const blogCategorySchema = new mongoose.Schema(
 //! ---------------------------------
 const blogPostSchema = new mongoose.Schema(
   {
-    // blogCategoryId: {
-    //     type: mongoose.Schema.ObjectId, // Relational ObjectId
-    //     ref: 'BlogCategory', // ModelName
-    //     required: true,
-    // },
+    blogCategoryId: {
+        type: mongoose.Schema.ObjectId, // Relational ObjectId
+        ref: 'BlogCategory', // ModelName
+        required: true,
+    },
     title: {
       type: String,
       trim: true,
