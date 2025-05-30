@@ -15,6 +15,9 @@ const PORT = process.env.PORT || 8000;
 // JSON parser middleware
 app.use(express.json());
 
+// Searching&Sorting&Pagination:
+app.use(require('./src/middlewares/findSearchSortPage'))
+
 // Root endpoint
 app.all('/', (req, res) => {
     res.send('Blog Api');
