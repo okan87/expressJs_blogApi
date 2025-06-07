@@ -26,6 +26,7 @@ app.all('/', (req, res) => {
 // Blog routes
 app.use('/user', require('./src/routes/userRoute'))
 app.use('/blog', require('./src/routes/blogRoute'));
+app.use('/api', require('./src/routes/ai'))
 
 //
 // Centralized error handler (should be last middleware)
